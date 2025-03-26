@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:m="clr-namespace:SG_MAUI_Client.Models"
+             x:Class="SG_MAUI_Client.MainPage"
+             Title="Athlete List">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="btnAdd" Text="Add"
+                     Clicked="btnAdd_Clicked" IconImageSource="add.png" />
+        <ToolbarItem x:Name="btnRefresh" Text="Refresh"
+                     Clicked="btnRefresh_Clicked" IconImageSource="refresh.png" />
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <Grid RowDefinitions="Auto, Auto, *"
+              ColumnDefinitions="150, *"
+              Padding="10"
+              RowSpacing="10"
+              ColumnSpacing="10">
+
+            <!-- Filter by Sport -->
+            <Label Text="Filter by Sport" 
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Margin="10"
+                   VerticalOptions="Center" />
+            <Picker x:Name="ddlSports"  
+                    Grid.Row="0"
+                    Grid.Column="1" 
+                    VerticalOptions="Center"
+                    ItemsSource="{Binding Sports}"
+                    ItemDisplayBinding="{Binding Name}" 
+                    SelectedIndexChanged="ddlSports_SelectedIndexChanged"/>
+
+            <!-- Filter by Contingent -->
+            <Label Text="Filter by Contingent" 
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Margin="10"
+                   VerticalOptions="Center" />
+            <Picker x:Name="ddlContingents"  
+                    Grid.Row="1"
+                    Grid.Column="1" 
+                    VerticalOptions="Center"
+                    ItemsSource="{Binding Contingents}"
+                    ItemDisplayBinding="{Binding Name}" 
+                    SelectedIndexChanged="ddlContingents_SelectedIndexChanged"/>
+
+            <ActivityIndicator x:Name="Loading" 
+                               Grid.Row="2" Grid.ColumnSpan="2" 
+                               HeightRequest="50" WidthRequest="50" 
+                               IsRunning="false" 
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center" />
+
+            <!-- Athlete List -->
+            <ListView Grid.Row="2" Grid.ColumnSpan="2" Margin="15,0,10,0"
+                      ItemsSource="{Binding Athletes}"
+                      SelectionMode="Single"
+                      ItemSelected="AthleteSelected"
+                      x:Name="AthleteList">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding FullName}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

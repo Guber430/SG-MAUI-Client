@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.AccessControl;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SG_MAUI_Client.Models
+{
+    public class Sport
+    {
+        public int ID { get; set; }
+        public string Code { get; set; } = "";
+        public string Name { get; set; } = "";
+        public Byte[]? RowVersion { get; set; }
+        public ICollection<Athlete> Athletes { get; set; } = new HashSet<Athlete>();
+    }
+}

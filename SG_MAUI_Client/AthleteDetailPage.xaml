@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SG_MAUI_Client.AthleteDetailPage"
+             xmlns:m="clr-namespace:SG_MAUI_Client.Models"
+             Title="Athlete Details">
+    <ScrollView x:Name="ArtworkScrollView" Orientation="Vertical" VerticalOptions="FillAndExpand" >
+        <VerticalStackLayout HorizontalOptions="FillAndExpand" 
+                         BackgroundColor="#FFF" 
+                         Margin="20,5,20,5" 
+                         Padding="15,10,15,10">
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="First Name:" WidthRequest="120"  VerticalOptions="Center" />
+                <Entry x:Name="txtFirstName" Text="{Binding FirstName}" WidthRequest="200"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Middle Name:" WidthRequest="120"  VerticalOptions="Center" />
+                <Entry x:Name="txtMiddleName" Text="{Binding MiddleName}" WidthRequest="200"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Last Name:" WidthRequest="120"  VerticalOptions="Center" />
+                <Entry x:Name="txtLastName" Text="{Binding LastName}" WidthRequest="200"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Athlete Code:" WidthRequest="120"  VerticalOptions="Center" />
+                <Entry x:Name="txtAthleteCode" Text="{Binding AthleteCode}" WidthRequest="200"  />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="DOB:" WidthRequest="120"   VerticalOptions="Center" />
+                <DatePicker  x:Name="dateDOB" Date="{Binding DOB}" WidthRequest="200" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Height:" WidthRequest="120"   VerticalOptions="Center" />
+                <Entry x:Name="txtHeight" Text="{Binding Height}" WidthRequest="200" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Weight:" WidthRequest="120"  VerticalOptions="Center" />
+                <Entry x:Name="txtWeight" Text="{Binding Weight}" WidthRequest="200" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Affilitation:" WidthRequest="120"  VerticalOptions="Center" />
+                <Entry x:Name="txtAffilitation" Text="{Binding Affiliation}" WidthRequest="200" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Sport:" WidthRequest="120"  VerticalOptions="Center" />
+                <Picker x:Name="ddlSports" WidthRequest="200"
+                        ItemDisplayBinding="{Binding Name}" VerticalOptions="Center">
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" >
+                <Label Text="Contingent:" WidthRequest="120"  VerticalOptions="Center" />
+                <Picker x:Name="ddlContingents" WidthRequest="200"
+            ItemDisplayBinding="{Binding Name}" VerticalOptions="Center">
+                </Picker>
+            </StackLayout>
+            <StackLayout Orientation="Vertical" >
+                <Button Text="Save" Clicked="SaveClicked" Margin="5,5,5,5" />
+                <Button Text="Cancel" Clicked="CancelClicked" Margin="5,5,5,5" />
+                <Button x:Name="btnDelete" Text="Delete" Clicked="DeleteClicked" Margin="5,5,5,5" />
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
