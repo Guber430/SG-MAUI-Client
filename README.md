@@ -2,6 +2,23 @@
 
 Welcome to the **Summer Games Web API**! This API is designed to manage a **Summer Games** event, similar to the Canada Summer Games held in the Niagara Region. The API is built using **C#**, **.NET 8**, and **SQLite** for the database. It handles data about athletes, sports, and contingents (provinces/territories) involved in the event.
 
+---
+
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Key Features](#key-features)
+- [Technologies Used](#technologies-used)
+- [Entities](#entities)
+  - [Contingent](#contingent)
+  - [Athlete](#athlete)
+  - [Sport](#sport)
+- [API Endpoints](#api-endpoints)
+- [Setup Instructions](#setup-instructions)
+  - [Prerequisites](#prerequisites)
+  - [Clone the Repository](#clone-the-repository)
+
+---
+
 ## Project Overview
 
 The Web API allows you to manage the following entities:
@@ -23,6 +40,8 @@ The Web API allows you to manage the following entities:
 - **Database**: SQLite
 - **API Documentation**: Swagger for API testing and documentation
 - **Authentication**: Not included in this version, but can be added as needed.
+
+---
 
 ## Entities
 
@@ -52,6 +71,9 @@ The Web API allows you to manage the following entities:
 | **POST**    | `/api/athletes`                     | Add a new athlete.                     |
 | **PUT**     | `/api/athletes/{id}`                | Update an existing athlete.            |
 | **DELETE**  | `/api/athletes/{id}`                | Delete an athlete.                     |
+
+
+---
 
 ## Setup Instructions
 
