@@ -2,8 +2,6 @@
 
 Welcome to the **Summer Games Web API**! This API is designed to manage a **Summer Games** event, similar to the Canada Summer Games held in the Niagara Region. The API is built using **C#**, **.NET 8**, and **SQLite** for the database. It handles data about athletes, sports, and contingents (provinces/territories) involved in the event.
 
-![Summer Games Logo](https://upload.wikimedia.org/wikipedia/commons/7/75/Canada_Summer_Games_Logo.svg)
-
 ## Project Overview
 
 The Web API allows you to manage the following entities:
