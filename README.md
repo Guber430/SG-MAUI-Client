@@ -57,5 +57,5 @@ The Web API is intended to manage the following entities:
 
 ### Clone the Repository
 ```bash
-git clone https://github.com/yourusername/SummerGamesAPI.git
+git clone https://github.com/Guber430/SummerGamesAPI.git
 cd SummerGamesAPI
